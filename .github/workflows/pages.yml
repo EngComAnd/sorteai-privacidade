@@ -1,0 +1,40 @@
+# Publicação no GitHub Pages: SÓ manual (Actions > Publicar página > Run workflow), depois de:
+#   1. Settings > Pages > Source: GitHub Actions;
+#   2. o domínio confirmado e o arquivo CNAME criado, se houver domínio próprio (nunca antes de o DNS ser do responsável);
+#   3. a revisão jurídica do texto.
+# Não roda sozinho a cada push: nada vai ao ar sem decisão expressa.
+name: Publicar página
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/verificar-pagina.py --publicar
+  publicar:
+    needs: verificar
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - name: Montar o artefato só com os arquivos do site
+        run: |
+          mkdir _site
+          cp -r index.html 404.html .nojekyll privacidade _site/
+          [ -f CNAME ] && cp CNAME _site/ || true
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4

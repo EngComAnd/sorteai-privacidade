@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>404 — SorteAí</title>
+<meta name="description" content="Página não encontrada.">
+<style>
+:root{--fundo:#F3F5F9;--superficie:#FFFFFF;--texto:#0E1B2C;--suave:#5A6676;--linha:#D9DEE7;--marca:#2440B8;--pendente-fundo:#FFE9A8;--pendente-texto:#3D2A00}
+@media (prefers-color-scheme:dark){:root{--fundo:#0E1116;--superficie:#161C25;--texto:#EAF2F7;--suave:#8E9DB0;--linha:#2A3340;--marca:#9DB2FF;--pendente-fundo:#5C4400;--pendente-texto:#FFEFC2}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--fundo);color:var(--texto);font:1.0625rem/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.pular{position:absolute;left:-999px;top:0;background:var(--texto);color:var(--fundo);padding:.75rem 1rem;z-index:10}
+.pular:focus{left:1rem;top:1rem}
+header,main,footer{max-width:46rem;margin:0 auto;padding:0 1rem}
+header{padding-top:1.5rem}
+.marca{font-weight:700;font-size:1.25rem;letter-spacing:.01em}
+h1{font-size:1.75rem;line-height:1.25;margin:.5rem 0 .75rem}
+h2{font-size:1.25rem;line-height:1.3;margin:2rem 0 .5rem}
+a{color:var(--marca);text-underline-offset:.15em}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--marca);outline-offset:2px;border-radius:4px}
+.idiomas{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin:1rem 0;padding:0;list-style:none}
+.idiomas li{display:contents}
+.idiomas .rotulo{color:var(--suave);font-size:.9rem;margin-inline-end:.25rem}
+.idiomas a{display:inline-flex;align-items:center;min-height:2.75rem;padding:0 1rem;border:1px solid var(--linha);border-radius:999px;background:var(--superficie);color:var(--texto);text-decoration:none}
+.idiomas a[aria-current="page"]{background:var(--texto);color:var(--fundo);border-color:var(--texto);font-weight:600}
+.meta{color:var(--suave);font-size:.95rem;margin:0 0 1rem}
+.resumo{margin:0 0 1rem}
+nav.indice{background:var(--superficie);border:1px solid var(--linha);border-radius:12px;padding:.75rem 1rem;margin:1rem 0}
+nav.indice p{margin:.25rem 0;font-weight:600}
+nav.indice ol{margin:.25rem 0;padding-inline-start:1.25rem}
+.aviso{border:1px dashed var(--suave);border-radius:8px;padding:.5rem .75rem;font-size:.95rem}
+ul,ol{padding-inline-start:1.25rem}
+li{margin:.35rem 0}
+table{border-collapse:collapse;width:100%;margin:.5rem 0;background:var(--superficie)}
+th,td{border:1px solid var(--linha);padding:.6rem .75rem;text-align:start;vertical-align:top}
+th{background:var(--fundo)}
+.pendente{background:var(--pendente-fundo);color:var(--pendente-texto);border-bottom:2px dashed currentColor;padding:0 .2em;border-radius:3px}
+footer{padding-bottom:3rem;color:var(--suave);font-size:.95rem;border-top:1px solid var(--linha);margin-top:2.5rem;padding-top:1rem}
+.lista-idiomas{list-style:none;padding:0}
+.lista-idiomas a{display:block;padding:1rem;border:1px solid var(--linha);border-radius:12px;background:var(--superficie);color:var(--texto);text-decoration:none;font-weight:600;margin:.5rem 0}
+@media print{.idiomas,.pular,nav.indice{display:none}body{background:#fff;color:#000}}
+</style>
+</head>
+<body>
+<header><div class="marca">SorteAí</div></header>
+<main>
+<h1>404</h1>
+<p>Página não encontrada · Page not found · Página no encontrada</p>
+<ul class="lista-idiomas"><li><a href="/sorteai-privacidade/privacidade/pt/" lang="pt-BR">Português</a></li><li><a href="/sorteai-privacidade/privacidade/en/" lang="en">English</a></li><li><a href="/sorteai-privacidade/privacidade/es/" lang="es">Español</a></li></ul>
+</main>
+</body>
+</html>

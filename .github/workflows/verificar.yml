@@ -1,0 +1,17 @@
+# Verificação da página em todo pull request e a cada envio à main: estrutura, idiomas, sem script nem recurso externo, links, tamanho,
+# contraste e páginas em dia com a fonte. Campos pendentes só falham com --publicar (ver pages.yml).
+name: Verificar página
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/verificar-pagina.py
+      - name: Páginas geradas em dia com a fonte
+        run: |
+          python3 scripts/gerar-pagina.py
+          git diff --exit-code -- index.html 404.html privacidade
